@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 //     });
 
 
-mongoose.connect('mongodb://localhost:27017/community', {
+mongoose.connect('mongodb://localhost:27017/team7', {
     useNewUrlParser: true,       
     useUnifiedTopology: true
 })
