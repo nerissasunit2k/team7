@@ -131,7 +131,7 @@
           <button class="danger" routerLink="/dashboard/student-list">Cancel</button>
         </div>
       </form><br><br>
-      <app-suggestions [suggestions]="suggestions"></app-suggestions>
+      <app-suggestions (select)="getSelected($event)" [student]="record" [suggestions]="suggestions"></app-suggestions>
     </div>
   
 

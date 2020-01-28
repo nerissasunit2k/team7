@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output , EventEmitter} from '@angular/core';
 import { StudentInfo } from '../../../../../services/studentInfo';
+import { Record } from '../../../../../services/record';
 
 @Component({
   selector: 'app-suggestions',
@@ -8,11 +9,17 @@ import { StudentInfo } from '../../../../../services/studentInfo';
 })
 export class SuggestionsComponent implements OnInit {
   @Input() suggestions: Array<StudentInfo>;
+  @Input() student: Record;
+  @Output() select = new EventEmitter<StudentInfo>();
   constructor() { 
     this.suggestions = new  Array<StudentInfo>();
   }
 
   ngOnInit() {
+  }
+
+  clicked(name: StudentInfo) {
+    this.select.emit(name);
   }
 
 }
