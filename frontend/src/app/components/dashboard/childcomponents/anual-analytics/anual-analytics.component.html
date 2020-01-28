@@ -1,0 +1,21 @@
+<table>
+  <tr class="title">
+    <th colspan="5" class="noborder">
+      Anual students counterpart statistics
+    </th>
+  </tr>
+  <tr class="thead">
+    <th>Year</th>
+    <th class="hpaid">No. of student who paid</th>
+    <th class="hpaid">Total amount received</th>
+    <th class="hntpaid">No. student who didn't pay</th>
+    <th class="hntpaid">Total amount to be received</th>
+  </tr>
+  <tr *ngFor="let rec of monthlyStat">
+    <td>{{ rec.month }}</td>
+    <td class="paid">{{ rec.numOfStudWhoPaid }}</td>
+    <td class="paid">{{ rec.totalAmountRec }}</td>
+    <td class="ntpaid">{{ rec.numOfStudWhoDdntPay }}</td>
+    <td class="ntpaid">{{ rec.totalAmountToRec }}</td>
+  </tr>
+</table>

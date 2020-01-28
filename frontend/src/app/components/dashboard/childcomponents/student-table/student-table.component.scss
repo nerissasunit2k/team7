@@ -1,0 +1,114 @@
+table {
+  font-size: 15px !important;
+  
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgb(184, 183, 183), 0 1px 2px rgb(80, 79, 79);
+  background: white;
+}
+
+.title {
+  background: dodgerblue;
+  th {
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+}
+th {
+  text-align: left;
+  color: white;
+  font-weight: lighter;
+  padding: 15px 15px;
+  border-right:1px solid lightgrey;
+  pointer-events: none;
+}
+
+.noborder {
+  border:none;
+}
+.thead {
+  background: rgb(218, 221, 226);
+
+  th {
+    color: black;
+    font-size: 16px;
+    //   padding:9px 10px;
+    font-weight: normal;
+    background: none;
+  }
+}
+tr {
+  transition: 0.2s;
+  border-bottom: 1px solid rgb(206, 212, 221);
+}
+td {
+  text-align: left;
+  // background: lightgrey;
+  padding: 15px 15px;
+}
+
+tr:hover {
+  background: rgb(218, 221, 226);
+}
+
+.add {
+  background: dodgerblue;
+  color: white;
+  border-radius: 50%;
+  padding-bottom: 5px !important;
+  padding: 3px 11px;
+  box-shadow: 0 0 10px lightgray, 0 1px 2px rgb(19, 18, 18);
+  font-size: 20px;
+  position: relative;
+
+  span {
+    color: rgb(80, 79, 79);
+    background: rgb(245, 244, 244);
+    left: -50px;
+    opacity: 0;
+    transition: 0.2s;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgb(143, 142, 142), 0 2px 4px rgb(19, 18, 18);
+    position: absolute;
+  }
+}
+
+.action:hover {
+  .add {
+    box-shadow: 0 0 30px lightgray, 0 5px 10px rgb(19, 18, 18);
+    span {
+      opacity: 1;
+      left: -115px;
+    }
+  }
+}
+
+.hpaid {
+  color:green !important;
+}
+
+.hntpaid {
+
+  color:red!important;
+}
+
+.hlstpaid {
+  color:rgb(0, 114, 228) !important;
+}
+.paid {
+  background: rgba(199, 241, 199, 0.5);
+}
+
+.ntpaid {
+  background: rgb(255, 204, 204, 0.5);
+}
+
+.lstpaid {
+  background: rgba(176, 209, 241, 0.4);
+}

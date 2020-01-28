@@ -1,0 +1,98 @@
+.sideboard {
+    position: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    left:0;
+    background: white;
+    top:0;
+    // background: lightgrey;
+    box-shadow: 0 0 30px lightgrey, 1px 0 3px rgb(41, 40, 40);
+    height: 100%;
+    width: 240px;
+    overflow: hidden;
+    z-index: 1;
+    transition: .3s;
+
+    ul {
+        padding:0;
+    }
+
+    li {
+        list-style-type: none;
+        padding:25px 20px;
+        position: relative;
+        overflow: hidden;
+        padding-left:50px;
+        transition:.4s;
+        .fas {
+            position: absolute;
+            left:20px;
+            top:35%;
+        }
+
+        .navtext {
+            position: absolute;
+            transition: .5s;
+            left:70px;
+            top:30%;
+        }
+    }
+
+  
+
+    .active {
+        outline:none;
+        background:lightgrey;
+    }
+}
+
+
+.resp {
+
+        width:50px;
+
+        li {
+            padding:25px 0;
+            .navtext {
+                display: none;
+            }
+        }
+        
+    
+    .content {
+        margin-left:60px !important;
+    }
+}
+
+.hidden {
+    margin-left:60px !important;
+}
+
+@media only screen and (max-width:1000px) {
+    .sideboard {
+        width:50px;
+
+        li {
+            padding:25px 0;
+            .navtext {
+                display: none;
+            }
+        }
+        
+    }
+    .content {
+        margin-left:60px !important;
+    }
+}
+
+.outercont {
+    background: rgb(240, 239, 239);
+    height: 100vh;
+    padding:20px;
+}
+.content {
+    margin-left:250px;
+    display: block;
+    // border:1px solid lightgrey;
+    padding:0;
+    transition: .3s;
+}

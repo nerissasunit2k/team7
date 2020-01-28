@@ -1,0 +1,32 @@
+<table>
+    <tr class="title" >
+        <th colspan="9" class="noborder">
+        Students counterpart records
+    </th>
+</tr>
+  <tr class="thead">
+    <th>No.</th>
+    <th>Name</th>
+    <th class="hlstpaid">Last month paid</th>
+    <th class="hpaid">Months paid</th>
+    <th class="hpaid">Amount</th>
+    <th class="hntpaid">Months to pay</th>
+    <th class="hntpaid">Amount</th>
+    <!-- <th>Months Left</th> -->
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let record of listOfStudents; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>{{ record.name }}</td>
+    <td class="lstpaid">{{record.lastMonthPaid}}</td>
+    <td class="paid">{{ record.monthsPaid }}</td>
+    <td class="paid">{{ record.amountPaid }}</td>
+    <td class="ntpaid">{{ record.monthsToPay }}</td>
+    <td class="ntpaid">{{ record.amountToPay }}</td>
+    <!-- <td>{{record.monthsLeft}}</td> -->
+    <td class="action"><span class="add" (click)="pay(record._id)">+
+        <span>Pay counterpart</span>
+    </span>
+    </td>
+  </tr>
+</table>
