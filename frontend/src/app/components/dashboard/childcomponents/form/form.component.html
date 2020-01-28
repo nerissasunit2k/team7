@@ -11,24 +11,25 @@
               class="holder"
               [ngClass]="{
                 active: focus === 1,
-                error: validate('name', ['required'])
+                error: validate('studentName', ['required'])
               }"
             >
-              <label [class.filled]="myForm.controls.name.value" class="label"
+              <label [class.filled]="myForm.controls.studentName.value" class="label"
                 >Student name</label
               >
               <label
                 class="placeholder"
                 (click)="focus = 1"
-                [class.filled2]="myForm.controls.name.value"
+                [class.filled2]="myForm.controls.studentName.value"
                 >Student name</label
               >
               <div class="border">
                 <input
                   type="text"
                   autocomplete="off"
-                  formControlName="name"
-                  [(ngModel)]="record.name"
+                  formControlName="studentName"
+                  [(ngModel)]="record.studentName"
+                  (keyup)="getSuggestions(record.studentName)"
                   (focus)="focus = 1"
                   (focusout)="focus = 0"
                 />
@@ -126,10 +127,13 @@
           </div>
         </div>
         <div class="buttons">
-          <button type="submit" class="primary">Submit</button>
+          <button type="submit" [disabled]="myForm.invalid" [class.nohover]="myForm.invalid" class="primary">Submit</button>
           <button class="danger" routerLink="/dashboard/student-list">Cancel</button>
         </div>
-      </form>
+      </form><br><br>
+      <app-suggestions [suggestions]="suggestions"></app-suggestions>
     </div>
+  
+
   </div>
 </div>

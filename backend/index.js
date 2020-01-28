@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express();
 const path = require("path");
-// const posts = require("./models/post");
+const record = require("./models/record");
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const port = 3002
@@ -14,10 +14,19 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-// const insertData = require('./insertData');
-// app.use('/insertData', insertData);
+const accessRecord = require('./accessRecords');
+app.use('/record', accessRecord );
+
+const Student = require('./accessStudent');
+app.use('/student', Student );
+
+const insertStudent = require('./insertStudent');
+app.use('/insertStudents', insertStudent );
 
 
+app.get('/', (req, res) => {
+    res.send("Server is running")
+})
 
 // mongoose
 //     .connect('mongodb+srv://badgebookdb:badgebookdb2019@cluster0-pn3a6.mongodb.net/bigdataproject?retryWrites=true&w=majority', {
@@ -57,6 +66,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+
+
+
+
+
+
+
 app.listen(port, function () {
     console.log('listening to port ' + port)
 })

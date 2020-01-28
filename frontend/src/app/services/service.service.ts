@@ -1,14 +1,27 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse, HttpInterceptor } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Student } from './student';
 import { Stat } from './monthlystat';
+import { Record } from './record';
+import { StudentInfo } from './studentInfo';
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': 'my-auth-token'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
 
-  constructor() { }
+
+
+export class ServiceService {
+  url: string = "http://localhost:3002"
+  constructor( private http: HttpClient) { }
 
   getData():Student[] {
     var list:Student[] = [{
@@ -189,9 +202,18 @@ export class ServiceService {
       numOfStudWhoDdntPay: "234",
       totalAmountRec: "10234",
       totalAmountToRec: "1023423"}
-    
 
   ]
     return year;
+  }
+  
+  
+ 
+  createRecord(record):Observable<Record> {
+    return this.http.post<Record>(`${this.url}${"/record/createRecord"}`, record, httpOptions)
+  }
+
+  getSuggestions(name):Observable<StudentInfo[]> {
+    return this.http.get<StudentInfo[]>(`${this.url}${"/student/getSuggestions/"}${name}`);
   }
 }
